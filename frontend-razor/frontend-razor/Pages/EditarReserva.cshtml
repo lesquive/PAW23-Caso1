@@ -1,0 +1,66 @@
+﻿@page
+@model EditarReservaModel
+
+<h1>Editar Reserva</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Nombre">Nombre</label>
+        <input type="text" id="Nombre" name="Nombre" class="form-control" value="@Model.Reserva.Nombre" required>
+    </div>
+
+    <div class="form-group">
+        <label for="Apellido">Apellido</label>
+        <input type="text" id="Apellido" name="Apellido" class="form-control" value="@Model.Reserva.Apellido">
+    </div>
+
+    <div class="form-group">
+        <label for="Teléfono">Teléfono</label>
+        <input type="text" id="Teléfono" name="Teléfono" class="form-control" value="@Model.Reserva.Teléfono">
+    </div>
+
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" id="Email" name="Email" class="form-control" value="@Model.Reserva.Email">
+    </div>
+
+    <div class="form-group">
+        <label for="Dirección">Dirección</label>
+        <input type="text" id="Dirección" name="Dirección" class="form-control" value="@Model.Reserva.Dirección">
+    </div>
+
+    <div class="form-group">
+        <label for="NumPersonas"># de Personas</label>
+        <input type="text" id="NumPersonas" name="NumPersonas" class="form-control" value="@Model.Reserva.NumPersonas">
+    </div>
+
+    <div class="form-group">
+        <label for="Fecha">Fecha</label>
+        <input type="text" id="Fecha" name="Fecha" class="form-control" value="@Model.Reserva.Fecha">
+    </div>
+
+    <div class="form-group">
+        <label for="Hora">Hora</label>
+        <input type="text" id="Hora" name="Hora" class="form-control" value="@Model.Reserva.Hora">
+    </div>
+
+    <div class="form-group">
+        <label for="NumMesa">Numero de Mesa</label>
+        <input type="text" id="NumMesa" name="NumMesa" class="form-control" value="@Model.Reserva.NumMesa">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+
+<form method="post" asp-page-handler="Delete" asp-route-id="@Model.Reserva.Id">
+    <button type="submit" id="cancelarReserva" class="btn btn-danger">Cancelar Reserva</button>
+</form>
+
+<a asp-page="/Reservas">Volver a la Lista</a>
+
+
+@section Scripts {
+    <script>document.getElementById("cancelarReserva").addEventListener("click", function (e) {
+    alert("Reserva Cancelada!");
+        });</script>
+}

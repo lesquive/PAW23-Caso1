@@ -1,0 +1,55 @@
+﻿@page
+@model CrearReservaModel
+
+<h1>Crear Una Nueva Reserva</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Nombre">Nombre</label>
+        <input type="text" id="Nombre" name="Nombre" class="form-control" asp-for="NewReserva.Nombre" required>
+    </div>
+
+    <div class="form-group">
+        <label for="Apellido">Apellido</label>
+        <input type="text" id="Apellido" name="Apellido" class="form-control" asp-for="NewReserva.Apellido">
+    </div>
+
+    <div class="form-group">
+        <label for="Teléfono">Teléfono</label>
+        <input type="text" id="Teléfono" name="Teléfono" class="form-control" asp-for="NewReserva.Teléfono">
+    </div>
+
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" id="Email" name="Email" class="form-control" asp-for="NewReserva.Email">
+    </div>
+
+    <div class="form-group">
+        <label for="Dirección">Dirección</label>
+        <input type="text" id="Dirección" name="Dirección" class="form-control" asp-for="NewReserva.Dirección">
+    </div>
+
+    <div class="form-group">
+        <label for="NumPersonas"># de Personas</label>
+        <input type="text" id="NumPersonas" name="NumPersonas" class="form-control" asp-for="NewReserva.NumPersonas">
+    </div>
+
+    <div class="form-group">
+        <label for="Fecha">Fecha</label>
+        <input type="text" id="Fecha" name="Fecha" class="form-control" asp-for="NewReserva.Fecha">
+    </div>
+
+    <div class="form-group">
+        <label for="Hora">Hora</label>
+        <input type="text" id="Hora" name="Hora" class="form-control" asp-for="NewReserva.Hora">
+    </div>
+
+    <div class="form-group">
+        <label for="NumMesa">Numero de Mesa</label>
+        <input type="text" id="NumMesa" name="NumMesa" class="form-control" asp-for="NewReserva.NumMesa">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear</button>
+</form>
+
+<a asp-page="/Reservas">Volver a Reservas</a>

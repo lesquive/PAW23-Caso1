@@ -1,0 +1,35 @@
+﻿@page "/"
+@model ReservasModel
+
+    <h1>Lista de Reservas</h1>
+
+    <a asp-page="/CrearReserva" class="btn btn-success"> + Reserva Nueva</a>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Apellido</th>
+                <th>Teléfono</th>
+                <th># de Personas</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Numero de Mesa</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reserva in Model.Reservas)
+            {
+                <tr>
+                    <td> <a asp-page="/EditarReserva" asp-route-id="@reserva.Id">@reserva.Id</a></td>
+                    <td>@reserva.Apellido</td>
+                    <td>@reserva.Teléfono</td>
+                    <td>@reserva.NumPersonas</td>
+                    <td>@reserva.Fecha</td>
+                    <td>@reserva.Hora</td>
+                    <td>@reserva.NumMesa</td>
+                </tr>
+            }
+        </tbody>
+    </table>
